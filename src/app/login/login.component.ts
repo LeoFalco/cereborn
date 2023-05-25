@@ -14,7 +14,7 @@ export class LoginComponent {
   constructor(private readonly AuthService: AuthService){}
 
   public login(){
-    signInWithRedirect(this.auth, new GoogleAuthProvider());
+    signInWithRedirect(this.auth, new GoogleAuthProvider())
   }
 
 }
