@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 400px;
+  height: 600px;
+  max-height: 90vh;
+  background-color: white;
+  border-radius: .8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &__welcome-text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    width: auto;
+    padding: 1rem 2rem;
+    border-radius: .4rem;
+    border: none;
+    transition: background-color .2s linear;
+    background-color: var(--primary-color);
+
+    &:hover {
+      cursor: pointer;
+      background-color: darkgray;
+    }
+  }
+}
+

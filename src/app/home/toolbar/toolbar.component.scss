@@ -1,0 +1,27 @@
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+
+  span {
+    margin-left: 30px;
+  }
+
+  button {
+    margin-right: 30px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: .8rem;
+    cursor: pointer;
+  }
+}

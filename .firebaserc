@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "celeborn-44c7b"
+  },
+  "targets": {
+    "celeborn-44c7b": {
+      "hosting": {
+        "cereborn": [
+          "celeborn-44c7b"
+        ]
+      }
+    }
   }
 }
