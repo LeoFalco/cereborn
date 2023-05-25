@@ -7,13 +7,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormComponent } from './src/app/home/form/form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
   ],
   imports: [
     BrowserModule,

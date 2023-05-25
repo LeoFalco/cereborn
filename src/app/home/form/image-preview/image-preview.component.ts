@@ -9,7 +9,10 @@ export class ImagePreviewComponent {
 
   selectedImage: string | null = null;
 
-  @Output() selectedFile = new EventEmitter<string | null>();
+  @Output() selectedFile = new EventEmitter<{
+    base64: string;
+    file: File;
+  } | null>();
 
 
   previewImage(event: Event): void {
@@ -20,7 +23,10 @@ export class ImagePreviewComponent {
       const reader = new FileReader();
       reader.onload = () => {
         this.selectedImage = reader.result as string;
-        this.selectedFile.emit(this.selectedImage || null);
+        this.selectedFile.emit({
+          base64: this.selectedImage,
+          file: file
+        });
       };
       reader.readAsDataURL(file);
     } else {
