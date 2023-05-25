@@ -8,5 +8,10 @@
     <app-image-preview (selectedFile)="imageAfter = $event"></app-image-preview>
   </div>
 
-  <button class="row__send-button" [disabled]="!imageBefore && !imageAfter" (click)="uploadImages($event)">Enviar Imagens</button>
+  <button class="button" [disabled]="!imageBefore && !imageAfter" (click)="uploadImages($event)">Enviar Imagens</button>
+</div>
+
+<div class="textarea-wrapper">
+  <textarea [value]="contentString"></textarea>
+  <button class="button" (click)="copy($event)" [disabled]="!contentString">Copiar</button>
 </div>
