@@ -46,20 +46,26 @@ export class FormComponent {
       this.contentString = stripIndent(`
         <table>
           <thead>
+          <!-- Caso tenha alguma nomenclatura diferente da alteração, você pode modificar os textos abaixo para refletir seus dados. Ex: Tela nova -->
+            <tr>
+              <th colspan="2">Comparação da Entrega</th>
+            </tr>
             <tr>
               <th>Antes</th>
+              <!-- Antes -->
               <th>Depois</th>
+              <!-- Depois -->
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td align="center">
                 <!-- Antes -->
-                <img src="${beforeDownloadUrl || this.placeholder}">
+                <img src="${beforeDownloadUrl || this.placeholder}" alt="Antes">
               </td>
-              <td>
+              <td align="center">
                 <!-- Depois -->
-                <img src="${afterDownloadUrl || this.placeholder}">
+                <img src="${afterDownloadUrl || this.placeholder}" alt="Depois">
               </td>
             </tr>
           </tbody>
