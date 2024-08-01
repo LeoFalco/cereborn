@@ -11,7 +11,8 @@ export class FormComponent {
   private storage = inject(Storage);
   private auth = inject(Auth);
 
-  private placeholder = 'https://via.placeholder.com/500';
+  private beforePlaceholder = 'https://s3.amazonaws.com/attachments.fieldcontrol.com.br/accounts/12/orders/8cc6163e-df45-43a3-898d-991b24121de2/tasks/aef29e03-1309-4457-9661-9c9d56a7c039/L_jrwVIWa.png'
+  private afterPlaceholder = 'https://s3.amazonaws.com/attachments.fieldcontrol.com.br/accounts/12/orders/8cc6163e-df45-43a3-898d-991b24121de2/tasks/aef29e03-1309-4457-9661-9c9d56a7c039/wDRW5GNmM.png'
 
   public imageBefore: { file: File } | null = null;
   public imageAfter: { file: File } | null = null;
@@ -61,11 +62,11 @@ export class FormComponent {
             <tr>
               <td align="center">
                 <!-- Antes -->
-                <img src="${beforeDownloadUrl || this.placeholder}" alt="Antes">
+                <img src="${beforeDownloadUrl || this.beforePlaceholder}" alt="Antes">
               </td>
               <td align="center">
                 <!-- Depois -->
-                <img src="${afterDownloadUrl || this.placeholder}" alt="Depois">
+                <img src="${afterDownloadUrl || this.afterPlaceholder}" alt="Depois">
               </td>
             </tr>
           </tbody>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-image-preview',
@@ -9,11 +9,17 @@ export class ImagePreviewComponent {
 
   selectedImage: string | null = null;
 
+  @Input() type: 'before' | 'after' = 'before';
+
   @Output() selectedFile = new EventEmitter<{
     base64: string;
     file: File;
   } | null>();
 
+  previewByType = {
+    before: 'https://s3.amazonaws.com/attachments.fieldcontrol.com.br/accounts/12/orders/8cc6163e-df45-43a3-898d-991b24121de2/tasks/aef29e03-1309-4457-9661-9c9d56a7c039/L_jrwVIWa.png',
+    after:  'https://s3.amazonaws.com/attachments.fieldcontrol.com.br/accounts/12/orders/8cc6163e-df45-43a3-898d-991b24121de2/tasks/aef29e03-1309-4457-9661-9c9d56a7c039/wDRW5GNmM.png'
+  }
 
   previewImage(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
@@ -33,6 +39,10 @@ export class ImagePreviewComponent {
       this.selectedImage = null;
       this.selectedFile.emit(this.selectedImage || null);
     }
+  }
 
+  triggerFileInput(): void {
+    const fileInput = document.getElementById('file-input-' + this.type) as HTMLElement;
+    fileInput.click();
   }
 }

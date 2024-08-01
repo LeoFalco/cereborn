@@ -1,9 +1,9 @@
 <div class="image-preview">
   <div class="image-preview__button-wrapper">
-    <input type="file" (change)="previewImage($event)" accept="image/*">
+    <input [id]="'file-input-' + type" type="file" (change)="previewImage($event)" accept="image/*">
   </div>
 
-  <div class="image-preview__image-wrapper">
-    <img *ngIf="selectedImage" [src]="selectedImage" alt="Preview Image" width="200" height="200">
+  <div class="image-preview__image-wrapper" (click)="triggerFileInput()">
+    <img *ngIf="selectedImage || previewByType[type]" [src]="selectedImage || previewByType[type]" alt="Preview Image" width="200" height="200">
   </div>
 </div>

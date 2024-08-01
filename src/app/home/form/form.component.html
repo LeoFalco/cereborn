@@ -1,11 +1,11 @@
 <div class="row">
   <div class="row__image-preview">
     <h2>Antes</h2>
-    <app-image-preview (selectedFile)="imageBefore = $event"></app-image-preview>
+    <app-image-preview (selectedFile)="imageBefore = $event" type="before"></app-image-preview>
   </div>
   <div class="row__image-preview">
     <h2>Depois</h2>
-    <app-image-preview (selectedFile)="imageAfter = $event"></app-image-preview>
+    <app-image-preview (selectedFile)="imageAfter = $event" type="after"></app-image-preview>
   </div>
 
   <button class="button" [disabled]="!imageBefore && !imageAfter" (click)="uploadImages($event)">Enviar Imagens</button>
